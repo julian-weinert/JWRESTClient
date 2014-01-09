@@ -12,7 +12,7 @@ I'll try to provide an example app in the next weeks, since I don't have much ti
 Easily drop the two class files (.h and .m) into jour project and `#import "JWRESTClient"` where you need it.
 
 ## Dependencies
-- [JWURLConnection][1]
+- [JWURLConnection][1] (included as submodule)
 
 ## Usage (examples)
 ``` objective-c
