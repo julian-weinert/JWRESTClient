@@ -11,6 +11,9 @@ I'll try to provide an example app in the next weeks, since I don't have much ti
 ## Installation
 Easily drop the two class files (.h and .m) into jour project and `#import "JWRESTClient"` where you need it.
 
+## Dependencies
+- [JWURLConnection][1]
+
 ## Usage (examples)
 ``` objective-c
 - (void)setup {
@@ -77,10 +80,10 @@ Easily drop the two class files (.h and .m) into jour project and `#import "JWRE
 
 ##Tasks
 ```
-[x] Form Data (POST)
-[x] File upload
-[x] Form file upload (POST)
-[ ] Check cache usage, sometimes seems buggy (JWURLConnection issue?)
+- [x] Form Data (POST)
+- [x] File upload
+- [x] Form file upload (POST)
+- [ ] Check cache usage, sometimes seems buggy (JWURLConnection issue?)
 ```
 
 ## Contact / Reference
@@ -93,3 +96,5 @@ Julian Weinert
 ## License
 
 `JWRESTClient ` and `JWURLConnection` are available under the GPL V2 license. See the LICENSE file for more info.
+
+  [1]: https://github.com/julian-weinert/JWURLConnection/ "JWURLConnection"
