@@ -12,7 +12,37 @@ I'll try to provide an example app in the next weeks, since I don't have much ti
 Easily drop the two class files (.h and .m) into jour project and `#import "JWRESTClient"` where you need it.
 
 ## Usage (examples)
+``` objective-c
+- (void)setup {
+    [[JWRESTClient sharedClient] setMD5UserCredentials:YES];
+    [[JWRESTClient sharedClient] setCachePolicy:NSURLRequestReloadIgnoringCacheData];
+    [[JWRESTClient sharedClient] serTootURL:[NSURL URLWithString:@"https://api.example.com/"]];
+}
 
+- (void)login {
+    [[JWRESTClient sharedClient] loginWithUserName:@"anonymous" andPassword:@"•••••••••" sendAdditionalPOSTDate:@{@"timestamp": @1389265265} completion:^(BOOL loggedIn, NSDictionary *userInfo, JWRESTUser *user, NSError *error) {
+        if (loggedIn) {
+            // user logged in, remove login form
+        }
+        else {
+            // losing fails, additional informations in userInfo and error
+        }
+    }];
+}
+
+- (void)uploadFile {
+    [[JWRESTClient sharedClient] executeCommand:@"saveImage" uploadFile:imageData withName:@"1389265265.jpg" forFieldName:@"file_name" andAdditionalPOSTData:@{"exif":@{"aperture":@"2.4"}} getDataWithBlock:^(NSData *data, NSStringEncoding encoding) {
+        NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments | NSJSONReadingMutableContainers error:nil];
+        
+        if ([[response objectForKey:@"response_code"] isEqualToString:@"OK"]) {
+            // image upload successful
+        }
+        else {
+            // upload failed, additional informations in error
+        }
+    }];
+}
+```
 
 ## Methods (excerpt, see header file for full list)
 ``` objective-c
