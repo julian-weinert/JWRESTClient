@@ -1,0 +1,3 @@
+[submodule "JWURLConnection"]
+	path = JWURLConnection
+	url = https://github.com/julian-weinert/JWURLConnection.git
