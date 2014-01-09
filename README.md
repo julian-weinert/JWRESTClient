@@ -80,7 +80,7 @@ Easily drop the two class files (.h and .m) into jour project and `#import "JWRE
 [x] Form Data (POST)
 [x] File upload
 [x] Form file upload (POST)
-[ ] Check cache usage, sometimes seems buggy (`JWURLConnection` issue?)
+[ ] Check cache usage, sometimes seems buggy (JWURLConnection issue?)
 ```
 
 ## Contact / Reference
