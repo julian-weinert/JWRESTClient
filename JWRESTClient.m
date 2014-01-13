@@ -13,33 +13,33 @@
  
  
  2xxx	GENERIC MESSAGES
- 2000	– OK									HTTP 200: OK
+ 2000	– OK						HTTP 200: OK
  
  
  4xxx	COMMAND ERRORS
  
  4010	– Command requires GET  request			HTTP 406: Not Acceptable
  4011	– Command requires POST request			HTTP 406: Not Acceptable
- 4012	– Command requires GET or POST request	HTTP 406: Not Acceptable
+ 4012	– Command requires GET or POST request		HTTP 406: Not Acceptable
  
- 4019	- No command provided					HTTP 406: Not Acceptable
- 4020	– Command not implemented				HTTP 406: Not Acceptable
+ 4019	- No command provided				HTTP 406: Not Acceptable
+ 4020	– Command not implemented			HTTP 406: Not Acceptable
  4021	– Missing argument for command			HTTP 406: Not Acceptable
  
  4030	– Incomplete user credentials			HTTP 406: Not Acceptable
- 4031	– Wrong user credentials				HTTP 403: Forbidden
- 4032	- Not Logged in							HTTP 403: Forbidden
+ 4031	– Wrong user credentials			HTTP 403: Forbidden
+ 4032	- Not Logged in					HTTP 403: Forbidden
  
- 4040	– File does not exist					HTTP 404: Not Found
- 4041	– Directory does not exist				HTTP 404: Not Found
- 4042	– Directory not writable				HTTP 500: Internal Server Error
- 4050	– File already exist					HTTP 409: Conflict
+ 4040	– File does not exist				HTTP 404: Not Found
+ 4041	– Directory does not exist			HTTP 404: Not Found
+ 4042	– Directory not writable			HTTP 500: Internal Server Error
+ 4050	– File already exist				HTTP 409: Conflict
  
  
  5xxx	SERVER ERRORS
  
- 5000	– Generic server error					HTTP 500: Internal Server Error
- 5010	– MySQL error							HTTP 500: Internal Server Error
+ 5000	– Generic server error				HTTP 500: Internal Server Error
+ 5010	– MySQL error					HTTP 500: Internal Server Error
 */
 
 #import "JWRESTClient.h"
@@ -67,9 +67,12 @@ static JWRESTClient *sharedClient;
 @implementation JWRESTClient
 
 + (JWRESTClient *)sharedClient {
-	if (!sharedClient) {
+	static dispatch_once_t dispatch;
+	
+	dispatch_once(&dispatch, ^{
 		sharedClient = [JWRESTClient RESTClient];
-	}
+	});
+	
 	return sharedClient;
 }
 
