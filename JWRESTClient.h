@@ -9,8 +9,22 @@
 #import <Foundation/Foundation.h>
 #import <CommonCrypto/CommonDigest.h>
 
-#import "JWDeviceInfo.h"
 #import "JWURLConnection.h"
+
+typedef NS_ENUM(NSUInteger, JWUserRole) {
+	JWUserRoleNone,
+	JWUserRoleVisitor,
+	JWUserRoleUser,
+	JWUserRoleInspector,
+	JWUserRoleAdmin
+};
+
+typedef NS_ENUM(NSUInteger, JWUserState) {
+	JWUserStateOffline,
+	JWUserStateOnline,
+	JWUserStateInactive,
+	JWUserStateKicking
+};
 
 @interface JWRESTUser : NSObject
 @property (nonatomic, retain) NSNumber *ID;
