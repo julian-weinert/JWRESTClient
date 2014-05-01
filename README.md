@@ -86,6 +86,10 @@ Easily drop the two class files (.h and .m) into jour project and `#import "JWRE
 - [ ] Check cache sometimes seems buggy (JWURLConnection issue?)
 ```
 
+## Credits
+
+`JWRESTClient` was originally created for http://www.csundm.com
+
 ## Contact / Reference
 
 Julian Weinert
