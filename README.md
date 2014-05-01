@@ -99,6 +99,6 @@ Julian Weinert
 
 ## License
 
-`JWRESTClient ` and `JWURLConnection` are available under the GPL V2 license. See the LICENSE file for more info.
+`JWRESTClient ` is available under the GPL V2 license. See the LICENSE file for more info.
 
   [1]: https://github.com/julian-weinert/JWURLConnection/ "JWURLConnection"
