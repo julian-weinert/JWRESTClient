@@ -2,6 +2,7 @@
 //  JWRESTClient.h
 //
 //  Created by Julian Weinert on 06.06.13.
+//  Originally created for http://www.csundm.com
 //  Copyright (c) 2013 Julian Weinert.
 //
 //    This program is free software: you can redistribute it and/or modify
